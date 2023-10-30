@@ -8,10 +8,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Pessoa pessoa = new Pessoa();
-        pessoa.setNome("Scooby");
+        pessoa.setNome("Renan");
         pessoa.setSenha("123");
 
         PessoaService pessoaService = new PessoaService();
@@ -20,7 +20,7 @@ public class Main {
 
         pessoaService.find(pessoa);
 
-        pessoa.setNome("Scooby Doo");
+        pessoa.setNome("Renan Rodrigues");
         pessoa.setSenha("1234");
         pessoaService.update(pessoa);
 
