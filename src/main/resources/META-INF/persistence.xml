@@ -6,7 +6,7 @@
     <persistence-unit name="crud-jpa">
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://192.168.56.4:5432/crud_jpa"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://?HOST?/crud_jpa"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="t00r"/>
             <!--<property name="jakarta.persistence.schema-generation.database.action" value="create"/>--> <!-- drop-and-create, create, drop, none -->
