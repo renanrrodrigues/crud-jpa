@@ -6,12 +6,14 @@
     <persistence-unit name="crud-jpa">
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://192.168.15.200:5432/crud_jpa"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://192.168.56.4:5432/crud_jpa"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="t00r"/>
             <!--<property name="jakarta.persistence.schema-generation.database.action" value="create"/>--> <!-- drop-and-create, create, drop, none -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!--desativar menssgens-->
             <property name="hibernate.use_sql_comments" value="false"/>
         </properties>

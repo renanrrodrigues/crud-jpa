@@ -1,20 +1,20 @@
 package app.service;
 
-import app.model.Pessoa;
+import app.model.Funcionario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.util.List;
 
-public class PessoaService {
+public class GenericService {
 
     public static final String PERSISTENCE_UNIT_NAME = "crud-jpa";
 
     EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
     EntityManager manager = factory.createEntityManager();
 
-    public void create(Pessoa entity) throws Exception {
+    public void create(Funcionario entity) throws Exception {
         try {
             manager.getTransaction().begin();
             manager.persist(entity);
@@ -24,7 +24,7 @@ public class PessoaService {
         }
     }
 
-    public void update(Pessoa entity) throws Exception {
+    public void update(Funcionario entity) throws Exception {
         try {
             manager.getTransaction().begin();
             manager.merge(entity);
@@ -34,7 +34,7 @@ public class PessoaService {
         }
     }
 
-    public void delete(Pessoa entity) throws Exception {
+    public void delete(Funcionario entity) throws Exception {
         try {
             manager.getTransaction().begin();
             manager.remove(entity);
@@ -44,19 +44,19 @@ public class PessoaService {
         }
     }
 
-    public Pessoa find(Pessoa entity) throws Exception {
+    public Funcionario find(Funcionario entity) throws Exception {
         try {
-            Pessoa pessoa = manager.find(Pessoa.class, entity.getId());
-            return pessoa;
+            Funcionario funcionario = manager.find(Funcionario.class, entity.getId());
+            return funcionario;
         } catch (Exception e) {
             throw new Exception("Erro ao buscar a pessoa: " + e.getMessage());
         }
     }
 
-    public List<Pessoa> findAll() throws Exception {
+    public List<Funcionario> findAll() throws Exception {
         try {
-            List<Pessoa> pessoas = manager.createQuery("SELECT p FROM Pessoa p", Pessoa.class).getResultList();
-            return pessoas;
+            List<Funcionario> funcionarios = manager.createQuery("SELECT p FROM Funcionario p", Funcionario.class).getResultList();
+            return funcionarios;
         } catch (Exception e) {
             throw new Exception("Erro ao buscar todas as pessoas: " + e.getMessage());
         }
